@@ -17,8 +17,6 @@ dat <- dat[which(dat$Date == "1/2/2007" | dat$Date == "2/2/2007"), ]
 Sys.setlocale("LC_TIME","C")
 dat$fulldatetime <- paste(dat[,]$Date , dat[,]$Time)
 dat$fulldatetime <- strptime(as.character(dat$fulldatetime), "%d/%m/%Y %H:%M:%S")
-#Extracts full cases
-dat <- complete.cases(dat)
 
 dat$Global_active_power <- as.numeric(as.character(dat$Global_active_power))
 #clears the mfrow param
